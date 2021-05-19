@@ -1,0 +1,12 @@
+D:\Coding\Software Metrics Project\Software Metrics Project\bin\Debug\Software Metrics Project.exe.config
+D:\Coding\Software Metrics Project\Software Metrics Project\bin\Debug\Software Metrics Project.exe
+D:\Coding\Software Metrics Project\Software Metrics Project\bin\Debug\Software Metrics Project.pdb
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software Metrics Project.csprojAssemblyReference.cache
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software_Metrics_Project.Form1.resources
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software_Metrics_Project.Properties.Resources.resources
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software_Metrics_Project.TCF_form.resources
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software Metrics Project.csproj.GenerateResource.cache
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software Metrics Project.csproj.CoreCompileInputs.cache
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software Metrics Project.exe
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software Metrics Project.pdb
+D:\Coding\Software Metrics Project\Software Metrics Project\obj\Debug\Software_Metrics_Project.LOC_form.resources
