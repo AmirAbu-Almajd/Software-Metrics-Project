@@ -34,6 +34,13 @@ namespace Software_Metrics_Project
             //LOCbox.Text = languagesView.SelectedItems[0].SubItems[1].Text.ToString();
             //You can only select languages and this is how to retreive their values
         }
+        private void languagesView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            //We can also add the LOC calculationg function here to make it calculate each time the user chooses a language
+            if (languagesView.SelectedIndices.Count == 0)
+                return;
+            LOCbox.Text = languagesView.SelectedItems[0].SubItems[1].Text.ToString();
+        }
 
         private void LOC_form_Load(object sender, EventArgs e)
         {
@@ -97,5 +104,7 @@ namespace Software_Metrics_Project
         {
             Application.Exit();
         }
+
+
     }
 }

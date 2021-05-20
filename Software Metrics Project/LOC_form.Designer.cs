@@ -77,6 +77,7 @@
             this.languagesView.TabIndex = 8;
             this.languagesView.UseCompatibleStateImageBehavior = false;
             this.languagesView.View = System.Windows.Forms.View.Details;
+            this.languagesView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.languagesView_ItemSelectionChanged);
             // 
             // LOC_form
             // 
