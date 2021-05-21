@@ -12,8 +12,11 @@ namespace Software_Metrics_Project
 {
     public partial class TCF_form : Form
     {
+        double TCF;
+        public static double FP;
         int i = 0;
         //These lists contain all the technical complexity factors and their ratings that are chosen by the user
+        static values value = new values();
         List<ComboBox> Ratings = new List<ComboBox>();
         public TCF_form()
         {
@@ -22,6 +25,17 @@ namespace Software_Metrics_Project
 
         private void TCF_form_Load(object sender, EventArgs e)
         {
+            tcfLabel.AutoSize = false; 
+            tcfLabel.Location = new Point(456, 14);
+            tcfLabel.Height = 40;
+            tcfLabel.Width = 114;
+            tcfLabel.TextAlign = ContentAlignment.MiddleCenter;
+            fpLabel.AutoSize = false;
+            fpLabel.Location = new Point(456, 71);
+            fpLabel.Height = 40;
+            fpLabel.Width = 114;
+            fpLabel.TextAlign = ContentAlignment.MiddleCenter;
+            value.Add_TCF_values();
             Ratings.Add(addRatingBox(i));
             Label l1 = addFactorsLabel(i++, "Data communications");
             Ratings.Add(addRatingBox(i));
@@ -50,6 +64,10 @@ namespace Software_Metrics_Project
             Label l13 = addFactorsLabel(i++, "Multiple sites");
             Ratings.Add(addRatingBox(i));
             Label l14 = addFactorsLabel(i++, "Facilitate change");
+            for(int i = 0; i < Ratings.Count; i++)
+            {
+                Ratings[i].SelectedIndexChanged += new System.EventHandler(this.calculateTCFandFP);
+            }
             i = 0;
             flowLayoutPanel1.Controls.Add(l1);
             flowLayoutPanel1.Controls.Add(Ratings[i++]);
@@ -79,6 +97,7 @@ namespace Software_Metrics_Project
             flowLayoutPanel1.Controls.Add(Ratings[i++]);
             flowLayoutPanel1.Controls.Add(l14);
             flowLayoutPanel1.Controls.Add(Ratings[i++]);
+            calculateTCFandFP(null, null);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -89,7 +108,7 @@ namespace Software_Metrics_Project
         {
             ComboBox cmb = new ComboBox();
             cmb.Name = "RatingsComboBox" + i.ToString();
-            cmb.Items.AddRange(new string[] { "No Influence","Incidental","Moderate","Average","Significant","Essential" });
+            cmb.Items.AddRange(new string[] { "No Influence", "Incidental", "Moderate", "Average", "Significant", "Essential" });
             cmb.Width = 170;
             cmb.Height = 70;
             cmb.SelectedIndex = 0;
@@ -97,21 +116,20 @@ namespace Software_Metrics_Project
             return cmb;
         }
 
-        Label addFactorsLabel(int i , String placeHolder)
+        Label addFactorsLabel(int i, String placeHolder)
         {
             Label l = new Label();
             l.Name = "Factors label" + i.ToString();
             l.Text = placeHolder;
             l.Width = 220;
-            l.Height = 30;
-            l.Margin = new Padding(0,5,0,5);
+            l.Height = 23;
+            l.Margin = new Padding(0, 5, 0, 5);
             l.TextAlign = ContentAlignment.MiddleCenter;
             return l;
         }
 
         private void LOCformBtn_Click(object sender, EventArgs e)
         {
-            //We need to pass the FP value to the next form as parameter for the next calculations
             LOC_form f = new LOC_form();
             this.Hide();
             f.Show();
@@ -119,6 +137,7 @@ namespace Software_Metrics_Project
 
         private void form1_backbtn_Click(object sender, EventArgs e)
         {
+            values.valuesDict.Clear();
             Form1 f = new Form1();
             f.Show();
             this.Hide();
@@ -126,12 +145,36 @@ namespace Software_Metrics_Project
 
         private void calculateTCFbtn_Click(object sender, EventArgs e)
         {
+            int Total_fs = 0;
+            for (int i = 0; i < Ratings.Count; i++)
+            {
+                Total_fs = Total_fs + values.factorScale[Ratings[i].SelectedItem.ToString()];
+            }
+            TCF = 0.65 + 0.01 * Total_fs;
+            TCFbox.Text = TCF.ToString();
             //Calculate the TCF using the rating values of the factors chosen by the user
         }
 
         private void calculateFPbtn_Click(object sender, EventArgs e)
         {
+            FP = Form1.UFP * TCF;
+            FPbox.Text = FP.ToString();
             //Calculate the FP
+        }
+        private void calculateTCFandFP(object sender, EventArgs e)
+        {
+
+            //Calculate the TCF using the rating values of the factors chosen by the user
+            int Total_fs = 0;
+            for (int i = 0; i < Ratings.Count; i++)
+            {
+                Total_fs = Total_fs + values.factorScale[Ratings[i].SelectedItem.ToString()];
+            }
+            TCF = 0.65 + (0.01 * Total_fs);
+            TCFbox.Text = TCF.ToString();
+            //Calculate the FP
+            FP = Form1.UFP * TCF;
+            FPbox.Text = FP.ToString();
         }
     }
 }

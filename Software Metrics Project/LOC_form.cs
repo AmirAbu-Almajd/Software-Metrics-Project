@@ -12,6 +12,7 @@ namespace Software_Metrics_Project
 {
     public partial class LOC_form : Form
     {
+        double LOC;
         public LOC_form()
         {
             InitializeComponent();
@@ -20,30 +21,19 @@ namespace Software_Metrics_Project
         private void TCFformBackBtn_Click(object sender, EventArgs e)
         {
             //We need to pass the FP value also back to the TCF form as a parameter so that it doesn't crash 
+            values.factorScale.Clear();
             TCF_form f = new TCF_form();
             f.Show();
             this.Hide();
         }
-
-        private void calculateLOCbtn_Click(object sender, EventArgs e)
-        {
-            //Calculate LOC using all the calculated previous values and the value of the programming language
-
-
-            //The next line is an example on how to access the value of a selected item in the ListView
-            //LOCbox.Text = languagesView.SelectedItems[0].SubItems[1].Text.ToString();
-            //You can only select languages and this is how to retreive their values
-        }
-        private void languagesView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            //We can also add the LOC calculationg function here to make it calculate each time the user chooses a language
-            if (languagesView.SelectedIndices.Count == 0)
-                return;
-            LOCbox.Text = languagesView.SelectedItems[0].SubItems[1].Text.ToString();
-        }
-
         private void LOC_form_Load(object sender, EventArgs e)
         {
+            locLabel.AutoSize = false;
+            locLabel.Height = 51;
+            locLabel.Width = 70;
+            locLabel.Location = new Point(20, 430);
+            locLabel.TextAlign = ContentAlignment.MiddleCenter;
+            locLabel.Margin = new Padding(15, 15, 15, 15);
             //Row spacing
             int itemHeight = 25;
             ImageList imgList = new ImageList();
@@ -98,6 +88,9 @@ namespace Software_Metrics_Project
             languagesView.Items.Add(lang11);
             languagesView.Items.Add(lang12);
             languagesView.Items.Add(lang13);
+            languagesView.MultiSelect = false;
+            languagesView.FullRowSelect = true;
+            languagesView.Items[0].Selected = true;
 
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -105,6 +98,18 @@ namespace Software_Metrics_Project
             Application.Exit();
         }
 
+        private void calculateLOC(object sender, EventArgs e)
+        {
+            LOC = TCF_form.FP * double.Parse(languagesView.SelectedItems[0].SubItems[1].Text);
+            LOCbox.Text = LOC.ToString();
+        }
+
+        private void languagesView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (languagesView.SelectedItems.Count == 0)
+                return;
+            calculateLOC(null, null);
+        }
 
     }
 }

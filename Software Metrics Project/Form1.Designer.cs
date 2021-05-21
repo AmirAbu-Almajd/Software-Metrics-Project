@@ -32,8 +32,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.addButton = new System.Windows.Forms.Button();
             this.TCFformBtn = new System.Windows.Forms.Button();
-            this.calculateUFPbtn = new System.Windows.Forms.Button();
             this.UFPbox = new System.Windows.Forms.TextBox();
+            this.ufpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -42,15 +42,15 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 14);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 419);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(627, 419);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // addButton
             // 
             this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
-            this.addButton.Location = new System.Drawing.Point(630, 14);
+            this.addButton.Location = new System.Drawing.Point(643, 14);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(61, 63);
+            this.addButton.Size = new System.Drawing.Size(50, 50);
             this.addButton.TabIndex = 1;
             this.addButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addButton.UseVisualStyleBackColor = true;
@@ -67,17 +67,6 @@
             this.TCFformBtn.UseVisualStyleBackColor = true;
             this.TCFformBtn.Click += new System.EventHandler(this.TCFformBtn_Click);
             // 
-            // calculateUFPbtn
-            // 
-            this.calculateUFPbtn.Font = new System.Drawing.Font("Gill Sans MT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateUFPbtn.Location = new System.Drawing.Point(10, 451);
-            this.calculateUFPbtn.Name = "calculateUFPbtn";
-            this.calculateUFPbtn.Size = new System.Drawing.Size(114, 42);
-            this.calculateUFPbtn.TabIndex = 3;
-            this.calculateUFPbtn.Text = "Calculate UFP";
-            this.calculateUFPbtn.UseVisualStyleBackColor = true;
-            this.calculateUFPbtn.Click += new System.EventHandler(this.calculateUFPbtn_Click);
-            // 
             // UFPbox
             // 
             this.UFPbox.Enabled = false;
@@ -89,13 +78,25 @@
             this.UFPbox.TabIndex = 4;
             this.UFPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // ufpLabel
+            // 
+            this.ufpLabel.AutoSize = true;
+            this.ufpLabel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ufpLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ufpLabel.Font = new System.Drawing.Font("Gill Sans MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ufpLabel.Location = new System.Drawing.Point(20, 457);
+            this.ufpLabel.Name = "ufpLabel";
+            this.ufpLabel.Size = new System.Drawing.Size(106, 29);
+            this.ufpLabel.TabIndex = 12;
+            this.ufpLabel.Text = "Total UFP";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 506);
+            this.Controls.Add(this.ufpLabel);
             this.Controls.Add(this.UFPbox);
-            this.Controls.Add(this.calculateUFPbtn);
             this.Controls.Add(this.TCFformBtn);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -115,8 +116,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button TCFformBtn;
-        private System.Windows.Forms.Button calculateUFPbtn;
         private System.Windows.Forms.TextBox UFPbox;
+        private System.Windows.Forms.Label ufpLabel;
     }
 }
 

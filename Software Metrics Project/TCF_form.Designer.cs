@@ -30,11 +30,11 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.TCFbox = new System.Windows.Forms.TextBox();
-            this.calculateTCFbtn = new System.Windows.Forms.Button();
             this.FPbox = new System.Windows.Forms.TextBox();
-            this.calculateFPbtn = new System.Windows.Forms.Button();
             this.LOCformBtn = new System.Windows.Forms.Button();
             this.form1_backbtn = new System.Windows.Forms.Button();
+            this.tcfLabel = new System.Windows.Forms.Label();
+            this.fpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -56,17 +56,6 @@
             this.TCFbox.TabIndex = 6;
             this.TCFbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // calculateTCFbtn
-            // 
-            this.calculateTCFbtn.Font = new System.Drawing.Font("Gill Sans MT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateTCFbtn.Location = new System.Drawing.Point(454, 14);
-            this.calculateTCFbtn.Name = "calculateTCFbtn";
-            this.calculateTCFbtn.Size = new System.Drawing.Size(114, 41);
-            this.calculateTCFbtn.TabIndex = 5;
-            this.calculateTCFbtn.Text = "Calculate TCF";
-            this.calculateTCFbtn.UseVisualStyleBackColor = true;
-            this.calculateTCFbtn.Click += new System.EventHandler(this.calculateTCFbtn_Click);
-            // 
             // FPbox
             // 
             this.FPbox.Enabled = false;
@@ -77,17 +66,6 @@
             this.FPbox.Size = new System.Drawing.Size(114, 41);
             this.FPbox.TabIndex = 8;
             this.FPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // calculateFPbtn
-            // 
-            this.calculateFPbtn.Font = new System.Drawing.Font("Gill Sans MT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateFPbtn.Location = new System.Drawing.Point(454, 71);
-            this.calculateFPbtn.Name = "calculateFPbtn";
-            this.calculateFPbtn.Size = new System.Drawing.Size(114, 41);
-            this.calculateFPbtn.TabIndex = 7;
-            this.calculateFPbtn.Text = "Calculate FP";
-            this.calculateFPbtn.UseVisualStyleBackColor = true;
-            this.calculateFPbtn.Click += new System.EventHandler(this.calculateFPbtn_Click);
             // 
             // LOCformBtn
             // 
@@ -111,17 +89,41 @@
             this.form1_backbtn.UseVisualStyleBackColor = true;
             this.form1_backbtn.Click += new System.EventHandler(this.form1_backbtn_Click);
             // 
+            // tcfLabel
+            // 
+            this.tcfLabel.AutoSize = true;
+            this.tcfLabel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tcfLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tcfLabel.Font = new System.Drawing.Font("Gill Sans MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcfLabel.Location = new System.Drawing.Point(512, 28);
+            this.tcfLabel.Name = "tcfLabel";
+            this.tcfLabel.Size = new System.Drawing.Size(54, 29);
+            this.tcfLabel.TabIndex = 11;
+            this.tcfLabel.Text = "TCF";
+            // 
+            // fpLabel
+            // 
+            this.fpLabel.AutoSize = true;
+            this.fpLabel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.fpLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fpLabel.Font = new System.Drawing.Font("Gill Sans MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fpLabel.Location = new System.Drawing.Point(512, 85);
+            this.fpLabel.Name = "fpLabel";
+            this.fpLabel.Size = new System.Drawing.Size(37, 29);
+            this.fpLabel.TabIndex = 12;
+            this.fpLabel.Text = "FP";
+            // 
             // TCF_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 506);
+            this.Controls.Add(this.fpLabel);
+            this.Controls.Add(this.tcfLabel);
             this.Controls.Add(this.form1_backbtn);
             this.Controls.Add(this.LOCformBtn);
             this.Controls.Add(this.FPbox);
-            this.Controls.Add(this.calculateFPbtn);
             this.Controls.Add(this.TCFbox);
-            this.Controls.Add(this.calculateTCFbtn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Gill Sans MT", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TCF_form";
@@ -138,10 +140,10 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox TCFbox;
-        private System.Windows.Forms.Button calculateTCFbtn;
         private System.Windows.Forms.TextBox FPbox;
-        private System.Windows.Forms.Button calculateFPbtn;
         private System.Windows.Forms.Button LOCformBtn;
         private System.Windows.Forms.Button form1_backbtn;
+        private System.Windows.Forms.Label tcfLabel;
+        private System.Windows.Forms.Label fpLabel;
     }
 }
