@@ -90,8 +90,12 @@ namespace Software_Metrics_Project
             languagesView.Items.Add(lang13);
             languagesView.MultiSelect = false;
             languagesView.FullRowSelect = true;
-            languagesView.Items[0].Selected = true;
 
+
+            languagesView.Focus();
+            languagesView.Select();
+            languagesView.Items[0].Selected = true;
+            languagesView.Items[0].Focused = true;
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
