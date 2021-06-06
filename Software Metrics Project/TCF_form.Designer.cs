@@ -35,6 +35,8 @@
             this.form1_backbtn = new System.Windows.Forms.Button();
             this.tcfLabel = new System.Windows.Forms.Label();
             this.fpLabel = new System.Windows.Forms.Label();
+            this.setAllLabel = new System.Windows.Forms.Label();
+            this.allBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -113,11 +115,33 @@
             this.fpLabel.TabIndex = 12;
             this.fpLabel.Text = "FP";
             // 
+            // setAllLabel
+            // 
+            this.setAllLabel.AutoSize = true;
+            this.setAllLabel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.setAllLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.setAllLabel.Font = new System.Drawing.Font("Gill Sans MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setAllLabel.Location = new System.Drawing.Point(470, 283);
+            this.setAllLabel.Name = "setAllLabel";
+            this.setAllLabel.Size = new System.Drawing.Size(68, 29);
+            this.setAllLabel.TabIndex = 13;
+            this.setAllLabel.Text = "Set all";
+            // 
+            // allBox
+            // 
+            this.allBox.FormattingEnabled = true;
+            this.allBox.Location = new System.Drawing.Point(585, 283);
+            this.allBox.Name = "allBox";
+            this.allBox.Size = new System.Drawing.Size(103, 26);
+            this.allBox.TabIndex = 14;
+            // 
             // TCF_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 506);
+            this.Controls.Add(this.allBox);
+            this.Controls.Add(this.setAllLabel);
             this.Controls.Add(this.fpLabel);
             this.Controls.Add(this.tcfLabel);
             this.Controls.Add(this.form1_backbtn);
@@ -145,5 +169,7 @@
         private System.Windows.Forms.Button form1_backbtn;
         private System.Windows.Forms.Label tcfLabel;
         private System.Windows.Forms.Label fpLabel;
+        private System.Windows.Forms.Label setAllLabel;
+        private System.Windows.Forms.ComboBox allBox;
     }
 }

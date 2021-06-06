@@ -34,7 +34,15 @@ namespace Software_Metrics_Project
             fpLabel.Location = new Point(456, 71);
             fpLabel.Height = 40;
             fpLabel.Width = 114;
-            fpLabel.TextAlign = ContentAlignment.MiddleCenter;
+            setAllLabel.AutoSize = false;
+            setAllLabel.Location = new Point(456, 283);
+            setAllLabel.Height = 22;
+            setAllLabel.Width = 114;
+            setAllLabel.TextAlign = ContentAlignment.MiddleCenter;
+            allBox.Items.AddRange(new string[] { "No Influence", "Incidental", "Moderate", "Average", "Significant", "Essential" });
+            allBox.SelectedIndex = 0;
+            allBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            allBox.SelectedIndexChanged += new System.EventHandler(this.changeAllBoxes);
             value.Add_TCF_values();
             Ratings.Add(addRatingBox(i));
             Label l1 = addFactorsLabel(i++, "Data communications");
@@ -175,6 +183,16 @@ namespace Software_Metrics_Project
             //Calculate the FP
             FP = Form1.UFP * TCF;
             FPbox.Text = FP.ToString();
+        }
+
+        private void changeAllBoxes(object sender, EventArgs e)
+        {
+            ComboBox temp = (ComboBox)sender;
+            for(int i = 0; i < Ratings.Count(); i++)
+            {
+                Ratings[i].SelectedIndex = temp.SelectedIndex;
+            }
+
         }
     }
 }
