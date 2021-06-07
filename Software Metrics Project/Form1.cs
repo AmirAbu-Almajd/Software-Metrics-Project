@@ -48,6 +48,7 @@ namespace Software_Metrics_Project
             Label l2 = addComplexityLabel(i);
             TextBox amountText = addAmountTxt(i);
             amountText.TextChanged += new System.EventHandler(this.validateText);
+            amountText.KeyDown += new KeyEventHandler(this.increaseByKeys);
             amountText.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.handleAmount);
             amounts.Add(amountText);
             FPs.Add(cmb1);
@@ -140,6 +141,7 @@ namespace Software_Metrics_Project
             Label l2 = addComplexityLabel(i);
             TextBox amountText = addAmountTxt(i);
             amountText.TextChanged += new System.EventHandler(this.validateText);
+            amountText.KeyDown += new KeyEventHandler(this.increaseByKeys);
             amountText.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.handleAmount);
             amounts.Add(amountText);
             FPs.Add(cmb1);
@@ -197,6 +199,24 @@ namespace Software_Metrics_Project
                 sender = temp;
             }
                 
+        }
+
+        private void increaseByKeys(object sender, KeyEventArgs e)
+        {
+            TextBox temp = (TextBox)sender;
+            if (e.KeyCode == Keys.Up)
+            {
+                int tempText =int.Parse(temp.Text);
+                tempText++;
+                temp.Text = tempText.ToString();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                int tempText = int.Parse(temp.Text);
+                tempText--;
+                temp.Text = tempText.ToString();
+            }
+            sender = temp;
         }
         private void TCFformBtn_Click(object sender, EventArgs e)
         {
