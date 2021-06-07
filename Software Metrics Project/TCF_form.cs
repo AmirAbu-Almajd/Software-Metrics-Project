@@ -34,6 +34,7 @@ namespace Software_Metrics_Project
             fpLabel.Location = new Point(456, 71);
             fpLabel.Height = 40;
             fpLabel.Width = 114;
+            fpLabel.TextAlign = ContentAlignment.MiddleCenter;
             setAllLabel.AutoSize = false;
             setAllLabel.Location = new Point(456, 283);
             setAllLabel.Height = 22;
